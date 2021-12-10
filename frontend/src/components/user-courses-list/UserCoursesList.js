@@ -39,18 +39,26 @@ class UserCoursesList extends Component {
             </li>
             <li className={styles['stat']}>
               <span className={styles['stat-label']}>
-                Points earned:
+                Graded Assignment Progress:
               </span>
               <span className={styles['stat-value']}>
-                {course.getIn(['progress_data', 'course_progress_details', 'points_earned'], 0)} (of {course.getIn(['progress_data', 'course_progress_details', 'points_possible'], 0)})
+                {(course.getIn(['progress_data', 'course_progress'], 0)*100).toFixed(2)}%
               </span>
             </li>
             <li className={styles['stat']}>
               <span className={styles['stat-label']}>
-                Overall progress:
+                Graded Assignments Completed:
               </span>
               <span className={styles['stat-value']}>
-                {(course.getIn(['progress_data', 'course_progress'], 0)*100).toFixed(2)}%
+                {course.getIn(['progress_data', 'course_progress_details', 'sections_worked']) ? course.getIn(['progress_data', 'course_progress_details', 'sections_worked']).toFixed(1) : '-'}/{course.getIn(['progress_data', 'course_progress_details', 'sections_possible']) ? course.getIn(['progress_data', 'course_progress_details', 'sections_possible']).toFixed(1) : '-'}
+              </span>
+            </li>
+            <li className={styles['stat']}>
+              <span className={styles['stat-label']}>
+                Graded Assignment Points Earned:
+              </span>
+              <span className={styles['stat-value']}>
+                {course.getIn(['progress_data', 'course_progress_details', 'points_earned']) ? course.getIn(['progress_data', 'course_progress_details', 'points_earned']).toFixed(1) : '-'}/{course.getIn(['progress_data', 'course_progress_details', 'points_possible']) ? course.getIn(['progress_data', 'course_progress_details', 'points_possible']).toFixed(1) : '-'}
               </span>
             </li>
           </ul>

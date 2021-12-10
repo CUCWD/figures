@@ -55,9 +55,15 @@ class CourseLearnersList extends Component {
           <span className={styles['name']}><Link to={'/figures/user/' + user.getIn(['id'])}>{user.getIn(['name'])}</Link></span>
           <span className={styles['country']}>{countriesWithCodes[user.getIn(['country'], 'ND')]}</span>
           <span className={styles['date-enrolled']}>{moment(courseSpecificData.getIn(['date_enrolled'])).format('LL')}</span>
-          <span className={styles['course-progress']}>{(courseSpecificData.getIn(['progress_data', 'course_progress'], 0)*100).toFixed(2)}%</span>
           <span className={styles['course-completed']}>{courseSpecificData.getIn(['progress_data', 'course_completed'], false) && <FontAwesomeIcon icon={faCheck} className={styles['completed-icon']} />}</span>
           <span className={styles['date-completed']}>{courseSpecificData.getIn(['progress_data', 'course_completed'], false) ? moment(courseSpecificData.getIn(['progress_data', 'course_completed'])).format('LL') : '-'}</span>
+          <span className={styles['course-progress']}>{(courseSpecificData.getIn(['progress_data', 'course_progress'], 0)*100).toFixed(2)}%</span>
+          <span className={styles['course-progress-sections-completed']}>
+            {courseSpecificData.getIn(['progress_data', 'course_progress_details', 'sections_worked']) ? courseSpecificData.getIn(['progress_data', 'course_progress_details', 'sections_worked']).toFixed(1) : '-'}/{courseSpecificData.getIn(['progress_data', 'course_progress_details', 'sections_possible']) ? courseSpecificData.getIn(['progress_data', 'course_progress_details', 'sections_possible']).toFixed(1) : '-'}
+          </span>
+          <span className={styles['course-progress-points-earned']}>
+            {courseSpecificData.getIn(['progress_data', 'course_progress_details', 'points_earned']) ? courseSpecificData.getIn(['progress_data', 'course_progress_details', 'points_earned']).toFixed(1) : '-'}/{courseSpecificData.getIn(['progress_data', 'course_progress_details', 'points_possible']) ? courseSpecificData.getIn(['progress_data', 'course_progress_details', 'points_possible']).toFixed(1) : '-'}
+          </span>
         </li>
       )
     })
@@ -74,10 +80,12 @@ class CourseLearnersList extends Component {
             <li key="header" className={styles['header-row']}>
               <span className={styles['name']}>Learner</span>
               <span className={styles['country']}>Country</span>
-              <span className={styles['date-enrolled']}>Date enrolled</span>
-              <span className={styles['course-progress']}>Course progress</span>
-              <span className={styles['course-completed']}>Course completed</span>
-              <span className={styles['date-completed']}>Date completed</span>
+              <span className={styles['date-enrolled']}>Date Enrolled</span>
+              <span className={styles['course-completed']}>Course Completed</span>
+              <span className={styles['date-completed']}>Date Completed</span>
+              <span className={styles['course-progress']}>Graded Assignment Progress</span>
+              <span className={styles['course-progress-completed']}>Graded Assignments Completed</span>
+              <span className={styles['course-progress-earned']}>Graded Assignment Points Earned</span>
             </li>
             {learnersRender}
           </ul>

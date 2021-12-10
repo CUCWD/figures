@@ -198,7 +198,7 @@ def populate_daily_metrics(site_id=None, date_for=None, force_update=False):
 
     do_update_enrollment_data = False if date_for < today else True
     if site_id is not None:
-        sites = get_sites_by_id((site_id, ))
+        sites = get_sites_by_id(site_id)
     else:
         sites = get_sites()
     sites_count = sites.count()
