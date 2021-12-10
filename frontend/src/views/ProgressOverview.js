@@ -204,7 +204,7 @@ class ProgressOverview extends Component {
           const pointsEarned = (userProgress.getIn(['progress_details', 'points_earned'])) ? userProgress.getIn(['progress_details', 'points_earned']).toFixed(1) : '-';
           const pointsPossible = (userProgress.getIn(['progress_details', 'points_possible'])) ? userProgress.getIn(['progress_details', 'points_possible']).toFixed(1) : '-';
 
-          singleRecord[course.id] = `Progress: ${progressPercent}/1 | Sections: ${sectionsWorked}/${sectionsPossible} | Points: ${pointsEarned}/${pointsPossible}`;
+          singleRecord[course.id] = `Graded Assignment Progress: ${progressPercent}/1 | Graded Assignments: ${sectionsWorked}/${sectionsPossible} | Graded Assignment Points Earned: ${pointsEarned}/${pointsPossible}`;
         } else {
           singleRecord[course.id] = '-';
         };
@@ -267,16 +267,16 @@ class ProgressOverview extends Component {
           <div className={styles['single-course-progress']}>
             {userProgress ? [
               <div className={styles['data-group']}>
-                <span className={styles['data-label']}>Sections</span>
+                <span className={styles['data-label']}>Graded Assignment Progress</span>
+                <span className={styles['data']}>{(userProgress.getIn(['progress_percent'])*100).toFixed(0)}%</span>
+              </div>,
+              <div className={styles['data-group']}>
+                <span className={styles['data-label']}>Graded Assignments Completed</span>
                 <span className={styles['data']}>{userProgress.getIn(['progress_details', 'sections_worked']) ? userProgress.getIn(['progress_details', 'sections_worked']).toFixed(1) : '-'}/{userProgress.getIn(['progress_details', 'sections_possible']) ? userProgress.getIn(['progress_details', 'sections_possible']).toFixed(1) : '-'}</span>
               </div>,
               <div className={styles['data-group']}>
-                <span className={styles['data-label']}>Points</span>
+                <span className={styles['data-label']}>Graded Assignment Points Earned</span>
                 <span className={styles['data']}>{userProgress.getIn(['progress_details', 'points_earned']) ? userProgress.getIn(['progress_details', 'points_earned']).toFixed(1) : '-'}/{userProgress.getIn(['progress_details', 'points_possible']) ? userProgress.getIn(['progress_details', 'points_possible']).toFixed(1) : '-'}</span>
-              </div>,
-              <div className={styles['data-group']}>
-                <span className={styles['data-label']}>Progress</span>
-                <span className={styles['data']}>{(userProgress.getIn(['progress_percent'])*100).toFixed(0)}%</span>
               </div>
             ] : (
               <span className={styles['no-data']}>-</span>
