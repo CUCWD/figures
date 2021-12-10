@@ -170,10 +170,10 @@ class CoursesList extends Component {
               </div>
             </div>
           </div>
-          <div className={styles['enrolments']}>
+          <div className={styles['enrollments']}>
             <div className={styles['in-cell-label-value']}>
               <div className={styles['mobile-label']}>
-                Enrolments:
+                Enrollments:
               </div>
               <div className={styles['mobile-value']}>
                 {metrics_enrollment_count}
@@ -262,8 +262,8 @@ class CoursesList extends Component {
                   ) : ''}
                 </button>
               </div>
-              <div className={styles['enrolments']}>
-                Enrolments:
+              <div className={styles['enrollments']}>
+                Enrollments:
               </div>
               <div className={styles['completions']}>
                 Completions:
