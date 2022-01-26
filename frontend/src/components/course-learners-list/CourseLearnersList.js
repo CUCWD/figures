@@ -81,8 +81,8 @@ class CourseLearnersList extends Component {
               <span className={styles['name']}>Learner</span>
               <span className={styles['country']}>Country</span>
               <span className={styles['date-enrolled']}>Date Enrolled</span>
-              <span className={styles['course-completed']}>Course Completed</span>
-              <span className={styles['date-completed']}>Date Completed</span>
+              <span className={styles['course-completed']}>Course Certificate Issued</span>
+              <span className={styles['date-completed']}>Course Certificate Date Issued</span>
               <span className={styles['course-progress']}>Graded Assignment Progress</span>
               <span className={styles['course-progress-completed']}>Graded Assignments Completed</span>
               <span className={styles['course-progress-earned']}>Graded Assignment Points Earned</span>
