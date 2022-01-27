@@ -31,7 +31,7 @@ class UserCoursesList extends Component {
             </li>
             <li className={styles['stat']}>
               <span className={styles['stat-label']}>
-                Course completed:
+                Course Certificate Completed:
               </span>
               <span className={styles['stat-value']}>
                 {course.getIn(['progress_data', 'course_completed']) ? <FontAwesomeIcon icon={faCheck} className={styles['completed-icon']} /> : '-'}
@@ -50,7 +50,7 @@ class UserCoursesList extends Component {
                 Graded Assignments Completed:
               </span>
               <span className={styles['stat-value']}>
-                {course.getIn(['progress_data', 'course_progress_details', 'sections_worked']) ? course.getIn(['progress_data', 'course_progress_details', 'sections_worked']).toFixed(1) : '-'}/{course.getIn(['progress_data', 'course_progress_details', 'sections_possible']) ? course.getIn(['progress_data', 'course_progress_details', 'sections_possible']).toFixed(1) : '-'}
+                {course.getIn(['progress_data', 'course_progress_details', 'sections_worked']) ? course.getIn(['progress_data', 'course_progress_details', 'sections_worked']).toFixed(0) : '-'}/{course.getIn(['progress_data', 'course_progress_details', 'sections_possible']) ? course.getIn(['progress_data', 'course_progress_details', 'sections_possible']).toFixed(0) : '-'}
               </span>
             </li>
             <li className={styles['stat']}>
