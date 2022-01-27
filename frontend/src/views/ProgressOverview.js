@@ -199,8 +199,8 @@ class ProgressOverview extends Component {
         if (userProgress) {
 
           const progressPercent = (userProgress.getIn(['progress_percent'])) ? userProgress.getIn(['progress_percent']).toFixed(2) : '-';
-          const sectionsWorked = (userProgress.getIn(['progress_details', 'sections_worked'])) ? userProgress.getIn(['progress_details', 'sections_worked']).toFixed(1) : '-';
-          const sectionsPossible = (userProgress.getIn(['progress_details', 'sections_possible'])) ? userProgress.getIn(['progress_details', 'sections_possible']).toFixed(1) : '-';
+          const sectionsWorked = (userProgress.getIn(['progress_details', 'sections_worked'])) ? userProgress.getIn(['progress_details', 'sections_worked']).toFixed(0) : '-';
+          const sectionsPossible = (userProgress.getIn(['progress_details', 'sections_possible'])) ? userProgress.getIn(['progress_details', 'sections_possible']).toFixed(0) : '-';
           const pointsEarned = (userProgress.getIn(['progress_details', 'points_earned'])) ? userProgress.getIn(['progress_details', 'points_earned']).toFixed(1) : '-';
           const pointsPossible = (userProgress.getIn(['progress_details', 'points_possible'])) ? userProgress.getIn(['progress_details', 'points_possible']).toFixed(1) : '-';
 
@@ -272,7 +272,7 @@ class ProgressOverview extends Component {
               </div>,
               <div className={styles['data-group']}>
                 <span className={styles['data-label']}>Graded Assignments Completed</span>
-                <span className={styles['data']}>{userProgress.getIn(['progress_details', 'sections_worked']) ? userProgress.getIn(['progress_details', 'sections_worked']).toFixed(1) : '-'}/{userProgress.getIn(['progress_details', 'sections_possible']) ? userProgress.getIn(['progress_details', 'sections_possible']).toFixed(1) : '-'}</span>
+                <span className={styles['data']}>{userProgress.getIn(['progress_details', 'sections_worked']) ? userProgress.getIn(['progress_details', 'sections_worked']).toFixed(0) : '-'}/{userProgress.getIn(['progress_details', 'sections_possible']) ? userProgress.getIn(['progress_details', 'sections_possible']).toFixed(0) : '-'}</span>
               </div>,
               <div className={styles['data-group']}>
                 <span className={styles['data-label']}>Graded Assignment Points Earned</span>
