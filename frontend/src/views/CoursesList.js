@@ -128,7 +128,7 @@ class CoursesList extends Component {
           <div className={styles['course-name']}>
             <div className={styles['in-cell-label-value']}>
               <div className={styles['mobile-label']}>
-                Course name:
+                Course Name:
               </div>
               <div className={styles['mobile-value']}>
                 <Link
@@ -153,7 +153,7 @@ class CoursesList extends Component {
           <div className={styles['start-date']}>
             <div className={styles['in-cell-label-value']}>
               <div className={styles['mobile-label']}>
-                Course start:
+                Course Start:
               </div>
               <div className={styles['mobile-value']}>
                 {parseCourseDate(course['start_date'])}
@@ -163,7 +163,7 @@ class CoursesList extends Component {
           <div className={styles['self-paced']}>
             <div className={styles['in-cell-label-value']}>
               <div className={styles['mobile-label']}>
-                Self paced:
+                Self Paced:
               </div>
               <div className={styles['mobile-value']}>
                 {course['self_paced'] ? <FontAwesomeIcon icon={faCheck} className={styles['checkmark-icon']} /> : '-'}
@@ -183,7 +183,7 @@ class CoursesList extends Component {
           <div className={styles['completions']}>
             <div className={styles['in-cell-label-value']}>
               <div className={styles['mobile-label']}>
-                Completions:
+                Course Certificate Completions:
               </div>
               <div className={styles['mobile-value']}>
                 {metrics_num_learners_completed}
@@ -232,7 +232,7 @@ class CoursesList extends Component {
                   onClick={() => (this.state.ordering !== 'display_name') ? this.setOrdering('display_name') : this.setOrdering('-display_name')}
                 >
                   <span>
-                    Course name
+                    Course Name
                   </span>
                   {(this.state.ordering === 'display_name') ? (
                     <FontAwesomeIcon icon={faAngleDoubleUp} />
@@ -245,7 +245,7 @@ class CoursesList extends Component {
                 Course ID:
               </div>
               <div className={styles['start-date']}>
-                Course start:
+                Course Start:
               </div>
               <div className={styles['self-paced']}>
                 <button
@@ -253,7 +253,7 @@ class CoursesList extends Component {
                   onClick={() => (this.state.ordering !== 'self_paced') ? this.setOrdering('self_paced') : this.setOrdering('-self_paced')}
                 >
                   <span>
-                    Self paced
+                    Self Paced
                   </span>
                   {(this.state.ordering === 'self_paced') ? (
                     <FontAwesomeIcon icon={faAngleDoubleUp} />
@@ -266,7 +266,7 @@ class CoursesList extends Component {
                 Enrollments:
               </div>
               <div className={styles['completions']}>
-                Completions:
+                Course Certificate Completions:
               </div>
               <div className={styles['action-container']}>
 

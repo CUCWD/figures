@@ -33,22 +33,22 @@ class DashboardContent extends Component {
           <BaseStatCard
             mainValue={this.props.generalData.getIn(['registeredUsers', 'current_month'], 0)}
             valueHistory={this.props.generalData.getIn(['registeredUsers', 'history'], [])}
-            cardTitle='Registered learners'
+            cardTitle='Registered Learners'
           />
           <BaseStatCard
             mainValue={this.props.generalData.getIn(['newUsers', 'current_month'], 0)}
             valueHistory={this.props.generalData.getIn(['newUsers', 'history'], [])}
-            cardTitle='New learners'
+            cardTitle='New Learners'
           />
           <BaseStatCard
             mainValue={this.props.generalData.getIn(['courseEnrollments', 'current_month'], 0)}
             valueHistory={this.props.generalData.getIn(['courseEnrollments', 'history'], [])}
-            cardTitle='Course enrollments'
+            cardTitle='Course Enrollments'
           />
           <BaseStatCard
             mainValue={this.props.generalData.getIn(['courseCompletions', 'current_month'], 0)}
             valueHistory={this.props.generalData.getIn(['courseCompletions', 'history'], [])}
-            cardTitle='Course completions'
+            cardTitle='Course Certificate Completions'
           />
         </div>
         <div className={cx({ 'container': true, 'functionality-callout': true})}>
