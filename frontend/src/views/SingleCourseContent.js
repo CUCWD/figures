@@ -78,32 +78,32 @@ class SingleCourseContent extends Component {
         </div>
         <div className={cx({ 'container': true, 'base-grid-layout': true, 'dashboard-content': true})}>
           <BaseStatCard
-            cardTitle='Active users'
+            cardTitle='Active Users'
             fetchDataKey={'active_users'}
             fetchValueFunction={(dataKey) => courseMonthlyMetrics.getSpecificWithHistory(this.props.courseId, dataKey)}
             fetchHistoryFunction={(dataKey) => courseMonthlyMetrics.getSpecificWithHistory(this.props.courseId, dataKey)}
           />
           <BaseStatCard
-            cardTitle='Number of enrolled learners'
+            cardTitle='Number of Enrolled Learners'
             fetchDataKey={'course_enrollments'}
             fetchValueFunction={(dataKey) => courseMonthlyMetrics.getSpecificWithHistory(this.props.courseId, dataKey)}
             fetchHistoryFunction={(dataKey) => courseMonthlyMetrics.getSpecificWithHistory(this.props.courseId, dataKey)}
           />
           <BaseStatCard
-            cardTitle='Average course progress'
+            cardTitle='Average Course Progress'
             fetchDataKey={'avg_progress'}
             fetchValueFunction={(dataKey) => courseMonthlyMetrics.getSpecificWithHistory(this.props.courseId, dataKey)}
             fetchHistoryFunction={(dataKey) => courseMonthlyMetrics.getSpecificWithHistory(this.props.courseId, dataKey)}
             dataType='percentage'
           />
           <BaseStatCard
-            cardTitle='Average days to complete'
+            cardTitle='Average Days to Complete'
             fetchDataKey={'avg_days_to_complete'}
             fetchValueFunction={(dataKey) => courseMonthlyMetrics.getSpecificWithHistory(this.props.courseId, dataKey)}
             fetchHistoryFunction={(dataKey) => courseMonthlyMetrics.getSpecificWithHistory(this.props.courseId, dataKey)}
           />
           <BaseStatCard
-            cardTitle='User course completions'
+            cardTitle='User Course Certificate Completions'
             fetchDataKey={'num_learners_completed'}
             fetchValueFunction={(dataKey) => courseMonthlyMetrics.getSpecificWithHistory(this.props.courseId, dataKey)}
             fetchHistoryFunction={(dataKey) => courseMonthlyMetrics.getSpecificWithHistory(this.props.courseId, dataKey)}
