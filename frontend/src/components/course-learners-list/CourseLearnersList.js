@@ -59,7 +59,7 @@ class CourseLearnersList extends Component {
           <span className={styles['date-completed']}>{courseSpecificData.getIn(['progress_data', 'course_completed'], false) ? moment(courseSpecificData.getIn(['progress_data', 'course_completed'])).format('LL') : '-'}</span>
           <span className={styles['course-progress']}>{(courseSpecificData.getIn(['progress_data', 'course_progress'], 0)*100).toFixed(2)}%</span>
           <span className={styles['course-progress-sections-completed']}>
-            {courseSpecificData.getIn(['progress_data', 'course_progress_details', 'sections_worked']) ? courseSpecificData.getIn(['progress_data', 'course_progress_details', 'sections_worked']).toFixed(1) : '-'}/{courseSpecificData.getIn(['progress_data', 'course_progress_details', 'sections_possible']) ? courseSpecificData.getIn(['progress_data', 'course_progress_details', 'sections_possible']).toFixed(1) : '-'}
+            {courseSpecificData.getIn(['progress_data', 'course_progress_details', 'sections_worked']) ? courseSpecificData.getIn(['progress_data', 'course_progress_details', 'sections_worked']).toFixed(0) : '-'}/{courseSpecificData.getIn(['progress_data', 'course_progress_details', 'sections_possible']) ? courseSpecificData.getIn(['progress_data', 'course_progress_details', 'sections_possible']).toFixed(0) : '-'}
           </span>
           <span className={styles['course-progress-points-earned']}>
             {courseSpecificData.getIn(['progress_data', 'course_progress_details', 'points_earned']) ? courseSpecificData.getIn(['progress_data', 'course_progress_details', 'points_earned']).toFixed(1) : '-'}/{courseSpecificData.getIn(['progress_data', 'course_progress_details', 'points_possible']) ? courseSpecificData.getIn(['progress_data', 'course_progress_details', 'points_possible']).toFixed(1) : '-'}
@@ -81,8 +81,8 @@ class CourseLearnersList extends Component {
               <span className={styles['name']}>Learner</span>
               <span className={styles['country']}>Country</span>
               <span className={styles['date-enrolled']}>Date Enrolled</span>
-              <span className={styles['course-completed']}>Course Completed</span>
-              <span className={styles['date-completed']}>Date Completed</span>
+              <span className={styles['course-completed']}>Course Certificate Issued</span>
+              <span className={styles['date-completed']}>Course Certificate Date Issued</span>
               <span className={styles['course-progress']}>Graded Assignment Progress</span>
               <span className={styles['course-progress-completed']}>Graded Assignments Completed</span>
               <span className={styles['course-progress-earned']}>Graded Assignment Points Earned</span>
