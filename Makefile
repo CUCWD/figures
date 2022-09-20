@@ -138,7 +138,7 @@ twine.push.prod:  ## Push build to PyPI production server
 
 frontend.build.clean:  ## Clean the webpack build
 	rm -rf figures/static/figures/*
-	rm figures/webpack-stats.json
+	rm -f figures/webpack-stats.json
 
 frontend.build: frontend.build.clean  ## Yarn build frontend assets
 	cd frontend; yarn build
